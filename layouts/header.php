@@ -1,4 +1,8 @@
-
+<?php  
+    require_once __DIR__. "/../autoload/autoload.php";
+    $sqlHomecate = "SELECT name , id FROM category WHERE home = 1 ORDER BY updated_at";
+    $CategoryHome = $db->fetchsql($sqlHomecate);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,7 +37,7 @@
                                             <li>
                                                 <a href="#"><i class="fa fa-user"></i>Tài khoản <i class="fa fa-caret-down"></i></a>
                                                 <ul id="header-submenu">
-                                                    <li><a href="">Thông tin</a></li>
+                                                    <li><a href="thongtintaikhoan.php">Thông tin</a></li>
                                                     <li><a href="gio-hang.php">Giỏ hàng</a></li>
                                                     <li><a href="thoat.php"><i class="fa fa-share-square-o"></i>Thoát</a></li>
                                                 </ul>
@@ -61,17 +65,9 @@
                                     <label>
                                         <select name="category" class="form-control">
                                             <option> All Category</option>
-                                            <option> Romance </option>
-                                            <option> Horror </option>
-                                            <option> Mystery </option>
-                                            <option> Science Fiction </option>
-                                            <option> Drama </option>
-                                            <option> Foreign Language </option>
-                                            <option> Comics </option>
-                                            <option> Health </option>
-                                            <option> Art </option>
-                                            <option> History </option>
-                                            <option> Musical </option>
+                                            <?php foreach ($CategoryHome as $cate): ?>
+                                                <option><?php echo $cate['name'] ?></option>
+                                            <?php endforeach ?>
                                         </select>
                                     </label>
                                     <input type="text" name="search" placeholder=" input keywork" class="form-control">
