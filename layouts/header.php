@@ -1,8 +1,4 @@
-<?php  
-    require_once __DIR__. "/../autoload/autoload.php";
-    $sqlHomecate = "SELECT name , id FROM category WHERE home = 1 ORDER BY updated_at";
-    $CategoryHome = $db->fetchsql($sqlHomecate);
-?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,8 +61,8 @@
                                     <label>
                                         <select name="category" class="form-control">
                                             <option> All Category</option>
-                                            <?php foreach ($CategoryHome as $cate): ?>
-                                                <option><?php echo $cate['name'] ?></option>
+                                            <?php foreach ($category as $item): ?>
+                                                <option><?php echo $item['name'] ?></option>
                                             <?php endforeach ?>
                                         </select>
                                     </label>
@@ -151,7 +147,7 @@
                             <ul>
                                 <?php foreach ($productNew as $item): ?>
                                 <li class="clearfix">
-                                    <a href="">
+                                    <a href="chi-tiet-san-pham.php?id=<?php echo $item['id']?>">
                                         <img src="<?php echo uploads()?>product/<?php echo $item['thunbar']?>" class="img-responsive pull-left" width="80" height="80">
                                         <div class="info pull-right">
                                             <p class="name"> <?php echo $item['name']?></p >
@@ -171,7 +167,7 @@
                             <ul>
                                 <?php foreach ($productPay as $item): ?>
                                 <li class="clearfix">
-                                    <a href="">
+                                    <a href="chi-tiet-san-pham.php?id=<?php echo $item['id']?>">
                                         <img src="<?php echo uploads()?>product/<?php echo $item['thunbar']?>" class="img-responsive pull-left" width="80" height="80">
                                         <div class="info pull-right">
                                             <p class="name"> <?php echo $item['name']?></p >
