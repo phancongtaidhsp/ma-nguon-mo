@@ -34,7 +34,7 @@
                                                 <a href="#"><i class="fa fa-user"></i>Tài khoản <i class="fa fa-caret-down"></i></a>
                                                 <ul id="header-submenu">
                                                     <li><a href="">Thông tin</a></li>
-                                                    <li><a href="">Giỏ hàng</a></li>
+                                                    <li><a href="gio-hang.php">Giỏ hàng</a></li>
                                                     <li><a href="thoat.php"><i class="fa fa-share-square-o"></i>Thoát</a></li>
                                                 </ul>
                                             </li>
