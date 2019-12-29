@@ -12,7 +12,7 @@
         {
             $p = 1;
         }
-        $sql = " SELECT * FROM product WHERE category_id = $id";
+        $sql = " SELECT * FROM product WHERE category_id = $id AND number > 0";
 
         $total = count($db->fetchsql($sql));
         $product = $db->fetchJones("product",$sql,$total,$p,3,true);

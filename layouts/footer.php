@@ -107,11 +107,10 @@
     })
 
     $(function(){
-        $updatecart = $("#updatecart");
+        $updatecart = $(".updatecart");
         $updatecart.change(function(e){
             e.preventDefault();
-            $qty = $(this).parents("tr").find(".qty").val();
-
+            $qty = this.value;
             $key = $(this).attr("data-key");
             $.ajax({
                 url: 'cap-nhat-gio-hang.php',
@@ -125,7 +124,7 @@
                     }
                     else
                     {
-                        alert('Xin lỗi! Số lượng bạn mua vượt quá số lượng hàng có trong kho hoặc cột đã được cập nhập!');
+                        alert(data);
                         location.href='gio-hang.php';
                     }
                 }

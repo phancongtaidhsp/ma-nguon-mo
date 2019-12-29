@@ -9,7 +9,7 @@
     foreach ($CategoryHome as $item) {
         $cateId = intval($item['id']);
 
-        $sql = "SELECT * FROM product WHERE category_id = $cateId ";
+        $sql = "SELECT * FROM product WHERE category_id = $cateId AND number > 0 ";
         $ProductHome = $db->fetchsql($sql);
         $data[$item['name']] = $ProductHome;
     }

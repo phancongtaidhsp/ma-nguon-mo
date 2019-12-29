@@ -59,7 +59,7 @@
                             						
                             				</td>
                             				<td>
-                            					<input id="updatecart" data-key=<?php echo $value['cartitems_id']?> type="number" name="qty" value="<?php echo $value['qty'] ?>" class="form-control qty" id="qty" min="1" max="<?php echo $value['number']+$value['qty'] ?>">
+                            					<input class="updatecart" data-key=<?php echo $value['cartitems_id']?> type="number" name="qty" value="<?php echo $value['qty'] ?>" class="form-control qty" id="qty" min="1" max="<?php echo $value['number']+$value['qty'] ?>">
                             				</td>
                             				<td><?php echo formatPrice($value['price'])?></td>
                             				<td><?php echo formatPrice($value['price'] * $value['qty'])?></td>
