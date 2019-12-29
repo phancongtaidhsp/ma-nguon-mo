@@ -124,7 +124,7 @@
                     }
                     else
                     {
-                        alert(data);
+                        alert("Rất tiếc!! Số lượng mua vượt quá số lượng trong kho");
                         location.href='gio-hang.php';
                     }
                 }

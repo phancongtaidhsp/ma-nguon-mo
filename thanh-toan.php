@@ -29,7 +29,7 @@
 					'transaction_id' =>$idtran,
 					'product_id'     =>$value['product_id'],
 					'qty'            =>$value['qty'],
-					'price'          =>$value['price']
+					'price'          =>$value['price']*$value['qty']
 				];
 
 				$id_insert = $db->insert("orders",$data2);
