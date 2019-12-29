@@ -1,5 +1,7 @@
 <?php  
 
+	require_once __DIR__. "/autoload/autoload.php";
+	$user = $db->fetchID("users",intval($_SESSION['name_id']));
 	if(!isset($_SESSION['name_id']))
 	{
 		echo "<script>alert('Bạn phải đăng nhập mới thực hiện được chức năng này');location.href='dang-nhap.php'</script>";
@@ -8,9 +10,6 @@
 	{
 		echo "<script>alert('Bạn chưa có giỏ hàng vui lòng mua sản phẩm');location.href='index.php'</script>";
 	}
-
-	require_once __DIR__. "/autoload/autoload.php";
-	$user = $db->fetchID("users",intval($_SESSION['name_id']));
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
